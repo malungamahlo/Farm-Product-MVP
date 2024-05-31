@@ -1,0 +1,143 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    
+    </head>
+    <body>
+        {% include 'snippets/base_css.html' %}
+        {% include 'snippets/base_js.html' %}
+        <div class="container-fluid bg-light">
+            <nav class="navbar navbar-expand-lg bg-success-subtle">
+              <div class="container-fluid">
+                  <h1>
+                    Product Details
+                  </h1>
+              </div>
+            </nav>  
+          </div>
+        <!--Body-->
+        <style type="text/css">
+            .main{
+                min-height: 100vh;
+                height: 100%;
+            }
+        </style>
+        <div class="main">
+            <div class="container fluid">
+                <div class="col">
+                    <form action="/submit_product_info" method="post" enctype="multipart/form-data">
+                        <div class="row mb-8 w-40 p-4">
+                            <div class="col">
+                                <label for="product_name">Product Name:</label>
+                                <input class="form-control" type="text" id="product_name" name="product_name" required>
+                            </div>
+                            <div class="col">
+                                <label for="product_category">Product Category:</label>
+                                <select class="form-control" id="product_category" name="product_category" required>
+                                    <option value="vegetables">Vegetables</option>
+                                    <option value="fruits">Fruits</option>
+                                    <option value="dairy">Dairy</option>
+                                    <!-- Add more categories as needed -->
+                                    </select>
+                                </div>   
+                                <div class="col">
+                                    <label for="farm_location">Farm Location:</label>
+                                    <input class="form-control" type="text" id="farm_location" name="farm_location" required>
+                                </div>
+                            </div>
+                        <div class="row mb-8 w-40 p-4">
+                            <div class="col">
+                                <label for="variety">Variety:</label>
+                                <input class="form-control" type="text" id="variety" name="variety">
+                            </div> 
+                            <div class="col">
+                                <label for="harvest_date">Harvest Date:</label>
+                                <input class="form-control" type="date" id="harvest_date" name="harvest_date" required>
+                            </div>
+
+                            <div class="col">
+                                <label for="quantity">Quantity Available:</label>
+                               <input class="form-control" type="number" id="quantity" name="quantity" required>
+                            </div>  
+                        </div> 
+                        
+                        <div class="row mb-8 w-40 p-4">
+                            <div class="col">
+                                <label for="certification">Certification:</label>
+                                <input class="form-control" type="text" id="certification" name="certification">
+                            </div> 
+                            <div class="col">
+                                <label for="sales_channels">Sales Channels:</label>
+                                <input class="form-control" type="text" id="sales_channels" name="sales_channels">
+                            </div>
+
+                            <div class="col">
+                                <label for="price">Price per Unit:</label>
+                                <input class="form-control" type="number" step="0.01" id="price" name="price" required>
+                            </div>  
+                        </div>
+                        
+                        <div class="row mb-8 w-40 p-4">
+                            <div class="col">
+                                <label for="quality_grade">Quality Grade:</label>
+                                <select class="form-control" id="quality_grade" name="quality_grade" required>
+                                    <option value="grade_a">Grade A</option>
+                                    <option value="grade_b">Grade B</option>
+                                    <!-- Add more grades as needed -->
+                                </select><br>
+                            </div> 
+                            <div class="col">
+                                <label for="product_images">Product Images:</label>
+                                <input class="form-control" type="file" id="product_images" name="product_images[]" multiple>
+                            </div>
+
+                            <div class="col">
+                                <label for="videos">Videos:</label>
+                                <input class="form-control" type="file" id="videos" name="videos[]" multiple>
+                            </div>  
+                        </div> 
+                        
+                        <div class="row mb-8 w-40 p-4">
+                            <div class="col">
+                                <label for="nutritional_info">Nutritional Information:</label>
+                                <textarea class="form-control" id="nutritional_info" name="nutritional_info"></textarea>
+                            </div> 
+                            <div class="col">
+                                <label for="growing_practices">Growing Practices:</label>
+                                <textarea class="form-control" id="growing_practices" name="growing_practices"></textarea>   
+                            </div>
+                        </div>
+
+                        <div class="row mb-8 w-40 p-4">
+                            <div class="col">
+                                <label for="storage_instructions">Storage Instructions:</label>
+                                <textarea class="form-control w-50" id="storage_instructions" name="storage_instructions"></textarea>    
+                            </div>
+                        </div>
+                        <div class="row mb-3 w-40 p-4">
+                            <div class="col-12">
+                                <button class="btn btn-primary" type="submit">Submit form</button>
+                              </div>
+                        </div>
+                        
+                    </form>
+                </div>
+
+            </div>
+        </div>
+
+        <!--End body-->
+        <script src="{% static 'booststrap/js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'booststrap/js/bootstrap.bundle.min.js' %}"></script>
+    </body>
+        
+</html>
+
